@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace TramiteWeb\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

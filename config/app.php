@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        TramiteWeb\Providers\AppServiceProvider::class,
+        TramiteWeb\Providers\AuthServiceProvider::class,
+        TramiteWeb\Providers\EventServiceProvider::class,
+        TramiteWeb\Providers\RouteServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,

@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: TramiteWeb
+        psr4_prefix: TramiteWeb
         src_path: app
