@@ -1,6 +1,6 @@
 <?php
 
-namespace TramiteWeb;
+namespace TramiteWeb\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
