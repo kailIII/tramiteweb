@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => TramiteWeb\Entities\User::class,
+    'model' => TramiteWeb\User::class,
 
     /*
     |--------------------------------------------------------------------------
