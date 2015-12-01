@@ -199,60 +199,33 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Nuevo Documento</span> <i class="fa fa-angle-left pull-right"></i>
+                <li>
+                    <a href="NuevoDocumento.php">
+                        <i class="fa fa-files-o"></i>
+                        <span>Nuevo Documento</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                        <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                    </ul>
                 </li>
+
                 <li class="treeview">
-                    <a href="#">
+                    <a href="MisDocumentos.php">
                         <i class="fa fa-files-o"></i>
                         <span>Mis Documentos</span>
-                        <span class="label label-primary pull-right">4</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                        <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                        <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                        <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                    </ul>
                 </li>
                 <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Doc. por Recepcionar</span> <small class="label pull-right bg-green">Hot</small>
+                    <a href="DocPorRecepcionar.php">
+                        <i class="fa fa-files-o"></i> <span>Doc. por Recepcionar</span>
+                        <span class="label label-primary pull-right">4</span>
                     </a>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Doc. Recepcionados</span>
-                        <i class="fa fa-angle-left pull-right"></i>
+                <li>
+                    <a href="DocRecionados.php">
+                        <i class="fa fa-files-o"></i> <span>Doc. Recepcionados</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                        <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                        <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                        <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-                    </ul>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-laptop"></i>
-                        <span>Doc. Archivados</span>
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                        <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                        <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                        <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                        <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                        <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-                    </ul>
+                <li>
+                    <a href="DocArchivados.php">
+                        <i class="fa fa-files-o"></i> <span>Doc. Archivados</span>
                 </li>
             </ul>
         </section>
