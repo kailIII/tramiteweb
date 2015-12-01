@@ -212,6 +212,12 @@
                         <span>Mis Documentos</span>
                     </a>
                 </li>
+                <li class="treeview">
+                    <a href="MisProveidos.php">
+                        <i class="fa fa-files-o"></i>
+                        <span>Mis Proveídos</span>
+                    </a>
+                </li>
                 <li>
                     <a href="DocPorRecepcionar.php">
                         <i class="fa fa-files-o"></i> <span>Doc. por Recepcionar</span>
