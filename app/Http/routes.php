@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as'=>'inicio',function () {
     return view('plantilla');
-});
+}]);
+
+Route::get('mis-proveidos',['as'=>'nombre',function () {
+    return view('MisProveidos');
+}]);
