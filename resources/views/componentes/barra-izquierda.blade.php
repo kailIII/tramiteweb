@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="treeview">
-                <a href="{!! route('nombre') !!}">
+                <a href="{!! route('misproveidos') !!}">
                     <i class="fa fa-file-archive-o"></i>
                     <span>Mis Proveídos</span>
                 </a>
@@ -55,8 +55,9 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa fa-floppy-o"></i> <span>Doc. Archivados</span>
+                <a href="{!! route('misdocumentosarchivados') !!}">
+                    <i class="fa fa-floppy-o"></i>
+                    <span>Doc. Archivados</span>
                 </a>
             </li>
         </ul>

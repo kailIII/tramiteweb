@@ -15,14 +15,23 @@ Route::get('/', ['as'=>'inicio',function () {
     return view('plantilla');
 }]);
 
+
+
+
 Route::get('mis-proveidos',[
-    'as'=>'nombre',function () {
-    return view('MisProveidos');
-}]);
+    'as'=>'misproveidos',
+    'uses'=>'DocumentoController@mostrarMisProveidos'
+]);
+
 
 
 Route::get('mis-documentos',[
     'as'=>'misdocumentos',
     'uses'=>'DocumentoController@mostrarMisDocumentos'
+]);
+
+Route::get('mis-documentos-archivados',[
+    'as'=>'misdocumentosarchivados',
+    'uses'=>'DocumentoController@mostrarMisDocumentosArchivados'
 ]);
 
