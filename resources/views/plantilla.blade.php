@@ -55,7 +55,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                @yield('NombreMenu')
+                @yield('contenido')
             </h1>
 
         </section>

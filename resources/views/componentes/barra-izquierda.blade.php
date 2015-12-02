@@ -32,7 +32,7 @@
             </li>
 
             <li class="treeview">
-                <a href="MisDocumentos">
+                    <a href="{!! route('misdocumentos') !!}">
                     <i class="fa fa-files-o"></i>
                     <span>Mis Documentos</span>
                 </a>
