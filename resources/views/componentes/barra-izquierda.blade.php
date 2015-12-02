@@ -26,6 +26,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li>
                 <a href="NuevoDocumento">
+                    <a href="{!! route('nuevodocumento') !!}">
                     <i class="fa fa-plus-square"></i>
                     <span>Nuevo Documento</span>
                 </a>
@@ -43,15 +44,17 @@
                     <span>Mis Proveídos</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-spinner"></i>
-                    <span>Doc. por Recepcionar</span>
+
+            <li class="treeview">
+                <a href="{!! route('docrecepcionados') !!}">
+                    <i class="fa fa-check-square-o"></i>
+                    <span>Doc Recepcionados</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-check-square-o"></i> <span>Doc. Recepcionados</span>
+            <li class="treeview">
+                <a href="{!! route('docrecepcionados') !!}">
+                    <i class="fa fa-check-square-o"></i>
+                    <span>Doc Recepcionados</span>
                 </a>
             </li>
             <li>

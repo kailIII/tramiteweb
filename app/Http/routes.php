@@ -17,7 +17,6 @@ Route::get('/', ['as'=>'inicio',function () {
 
 
 
-
 Route::get('mis-proveidos',[
     'as'=>'misproveidos',
     'uses'=>'DocumentoController@mostrarMisProveidos'
@@ -30,8 +29,26 @@ Route::get('mis-documentos',[
     'uses'=>'DocumentoController@mostrarMisDocumentos'
 ]);
 
+
 Route::get('mis-documentos-archivados',[
     'as'=>'misdocumentosarchivados',
     'uses'=>'DocumentoController@mostrarMisDocumentosArchivados'
 ]);
 
+
+Route::get('nuevo-documento',[
+    'as'=>'nuevodocumento',
+    'uses'=>'DocumentoController@mostrarNuevoDocumento'
+]);
+
+
+
+Route::get('doc-por-recepcionar',[
+    'as'=>'docporrecepcionar',
+    'uses'=>'DocumentoController@mostrarDocPorRecepcionar'
+]);
+
+Route::get('doc-recepcionados',[
+    'as'=>'docrecepcionados',
+    'uses'=>'DocumentoController@mostrarDocRecepcionados'
+]);
