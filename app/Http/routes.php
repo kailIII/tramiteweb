@@ -41,8 +41,6 @@ Route::get('nuevo-documento',[
     'uses'=>'DocumentoController@mostrarNuevoDocumento'
 ]);
 
-
-
 Route::get('doc-por-recepcionar',[
     'as'=>'docporrecepcionar',
     'uses'=>'DocumentoController@mostrarDocPorRecepcionar'
@@ -51,4 +49,9 @@ Route::get('doc-por-recepcionar',[
 Route::get('doc-recepcionados',[
     'as'=>'docrecepcionados',
     'uses'=>'DocumentoController@mostrarDocRecepcionados'
+]);
+
+Route::post('documento/grabar',[
+    'as'=>'documento.grabar',
+    'uses'=>'DocumentoController@grabar'
 ]);
