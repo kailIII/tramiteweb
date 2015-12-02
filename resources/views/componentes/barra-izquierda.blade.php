@@ -26,6 +26,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li>
                 <a href="NuevoDocumento">
+                    <a href="{!! route('nuevodocumento') !!}">
                     <i class="fa fa-plus-square"></i>
                     <span>Nuevo Documento</span>
                 </a>
@@ -38,7 +39,7 @@
                 </a>
             </li>
             <li class="treeview">
-                <a href="{!! route('nombre') !!}">
+                <a href="{!! route('misproveidos') !!}">
                     <i class="fa fa-file-archive-o"></i>
                     <span>Mis Proveídos</span>
                 </a>
