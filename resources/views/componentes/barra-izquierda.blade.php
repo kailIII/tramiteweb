@@ -46,11 +46,11 @@
             </li>
 
             <li class="treeview">
-                <a href="{!! route('docrecepcionados') !!}">
-                    <i class="fa fa-check-square-o"></i>
-                    <span>Doc Recepcionados</span>
+                <a href="{!! route('docporrecepcionar') !!}">
+                    <i class="fa fa-spinner"></i>
+                    <span>Doc Por Recepcionar</span>
                 </a>
-            </li>
+            <li>
             <li class="treeview">
                 <a href="{!! route('docrecepcionados') !!}">
                     <i class="fa fa-check-square-o"></i>
