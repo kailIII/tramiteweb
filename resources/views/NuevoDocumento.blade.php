@@ -11,6 +11,14 @@
             '1'=>'Cartra',
             '2'=>'Carta Circular',
             '3'=>'Circular',
+            '4'=>'Informe',
+            '5'=>'Memorandum',
+            '6'=>'Oficio',
+            '7'=>'Oficio Circular',
+            '8'=>'Oficio Multiple',
+            '9'=>'Orden de Pago',
+            '10'=>'Sobre Cerrado',
+            '11'=>'Solicitud',
             ))!!}
 
             </div>
