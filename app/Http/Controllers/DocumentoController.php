@@ -4,30 +4,42 @@ namespace TramiteWeb\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use TramiteWeb\Entities\TipoDocumento;
 use TramiteWeb\Http\Requests;
 use TramiteWeb\Http\Controllers\Controller;
 use TramiteWeb\Entities\Documento;
+
 
 
 class DocumentoController extends Controller
 {
     public function mostrarMisDocumentos()
     {
-        return view('misdocumentos.MisDocumentos');
+        $mostrarmisdocumento=new TipoDocumento();
+        $tipodocumento=$mostrarmisdocumento->all()->lists('descripcion','id');
+        return view('misdocumentos.MisDocumentos')->with(compact('tipodocumento'));
     }
 
     public function mostrarNuevoDocumento()
     {
-        return view('NuevoDocumento');
+
+        $nuevotipodocumento=new TipoDocumento();
+        $tipodocumento=$nuevotipodocumento->all()->lists('descripcion','id');
+        return view('NuevoDocumento')->with(compact('tipodocumento'));
+
     }
     public function mostrarMisProveidos()
     {
-        return view('MisProveidos');
+        $misproveidos=new TipoDocumento();
+        $tipodocumento=$misproveidos->all()->lists('descripcion','id');
+        return view('MisProveidos')->with(compact('tipodocumento'));
     }
 
     public function mostrarMisDocumentosArchivados()
     {
-         return view('DocArchivados');
+        $documentosarchivados=new TipoDocumento();
+        $tipodocumento=$documentosarchivados->all()->lists('descripcion','id');
+         return view('DocArchivados')->with(compact('tipodocumento'));
     }
 
     public function mostrarDocPorRecepcionar()
@@ -41,7 +53,7 @@ class DocumentoController extends Controller
     }
 
     /*
-     * método para grabar un documento, recibe como argumentos
+     * mtodo para grabar un documento, recibe como argumentos
      * todos los elementos del formulario
      * */
     public function grabar(Request $request)
@@ -52,7 +64,7 @@ class DocumentoController extends Controller
 
         Documento::create($datos);
 
-        return view('NuevoDocumento');
+        return \Redirect::route('nuevodocumento');
     }
 }
 

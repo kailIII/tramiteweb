@@ -16,24 +16,12 @@
 
             <i class="fa fa-file-text"></i>
             {!!  Form::label('Tipos de documetos') !!}
-            {!!  Form::select('TiposDocumetos',
-                array('documentos'=> 'Seleccionar',
-                    'Carta',
-                    'Carta circular',
-                    'Circular',
-                    'Informe',
-                    'Memorandum',
-                    'Memorandum Circular',
-                    'Oficina',
-                    'Oficina Circular',
-                    'Oficina multiple',
-                    'Orden de pago',
-                    'Sobre cerrado',
-                    'Solicitud'))!!}
+            {!!  Form::select('tipo_documento_id',$tipodocumento) !!}
         </div>
 
-    </form>
+
     <div>
         {!! form::submit('buscar') !!}
     </div>
+    </form>
 @endsection

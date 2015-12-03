@@ -4,14 +4,7 @@
     {!! Form::open(['route'=>'documento.grabar','method'=>'POST','role'=>'form']) !!}
         <div CLASS="form-group">
             {!! Form::label('Tipos de Documento') !!}
-            {!! Form::select('tipo_documento_id',
-
-            array('0'=> 'Seleccionar',
-
-            '1'=>'Cartra',
-            '2'=>'Carta Circular',
-            '3'=>'Circular',
-            ))!!}
+            {!! Form::select('tipo_documento_id',$tipodocumento) !!}
 
             </div>
 

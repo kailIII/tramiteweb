@@ -20,20 +20,7 @@
             <i class="fa fa-file"></i>
             {!! Form::label('Tipo de Docuemnto') !!}
             <br>
-            {!! Form::select('TipoDocumento',
-                 array('Documentos' => 'Todos',
-                                        'Carta',
-                                        'Carta Circular',
-                                        'Circular',
-                                        'Informe',
-                                        'Memorandum',
-                                        'Memorandum Circular',
-                                        'Oficio',
-                                        'Oficio Circular',
-                                        'Oficio Multiple',
-                                        'Orden de Pago',
-                                        'Sobre Cerrado',
-                                        'Solicitud'))!!}
+            {!! Form::select('tipo_documento_id',$tipodocumento) !!}
         </div>
         <br>
         <div>
