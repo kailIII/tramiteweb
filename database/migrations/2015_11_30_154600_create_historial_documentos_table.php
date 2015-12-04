@@ -24,10 +24,11 @@ class CreateHistorialDocumentosTable extends Migration
             $table->enum('estado',['Sin recibir','Recibido']);
             $table->integer('eliminado');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+
+            /*$table->foreign('user_id')->references('id')->on('users');
             $table->foreign('documento_id')->references('id')->on('documentos');
             $table->foreign('oficina_origen_id')->references('id')->on('oficinas');
-            $table->foreign('oficina_destino_id')->references('id')->on('oficinas');
+            $table->foreign('oficina_destino_id')->references('id')->on('oficinas');*/
         });
     }
 

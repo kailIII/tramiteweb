@@ -5,17 +5,37 @@
 
         <table class="table table-bordered table-hover table-striped">
             <thead>
-            <td>Nro</td>
-            <td>Tipo</td>
-            <td>Nro Doc</td>
-            <td>Enviado por</td>
-            <td>Asuntos</td>
-            <td>Anexos</td>
-            <td>Accion</td>
-            </thead>
             <tr>
-                <td colspan="7">No Se Encontraron Registros</td>
+            <th>Nro</th>
+            <th>Tipo</th>
+            <th>Nro Doc</th>
+            <th>Enviado por</th>
+            <th>Asuntos</th>
+            <th>Anexos</th>
+            <th>Accion</th>
+            </thead>
             </tr>
+            @if($documentos)
+
+                @foreach($documentos as $documento)
+                    <tr>
+                    <td>{!! $documento->id !!}</td>
+                    <td>{!! $documento->TipoDocumento->descripcion !!}</td>
+                    <td>{!! $documento->numero !!}</td>
+                    <td>{!! $documento->Oficina->nombre  !!}</td>
+                    <td>{!! $documento->asunto !!}</td>
+                    <td>{!! $documento->anexos !!}</td>
+                    <td> {!! Form::submit('Recepcionar') !!}</td>
+                    </tr>
+                @endforeach
+
+
+            @else
+            <tr>
+                <td>No Se Encontraron Registros</td>
+            </tr>
+              @endif
+            <br>
         </table>
 
     </form>

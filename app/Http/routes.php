@@ -36,10 +36,6 @@ Route::get('mis-documentos-archivados',[
 ]);
 
 
-Route::get('nuevo-documento',[
-    'as'=>'nuevodocumento',
-    'uses'=>'DocumentoController@mostrarNuevoDocumento'
-]);
 
 Route::get('doc-por-recepcionar',[
     'as'=>'docporrecepcionar',
@@ -51,7 +47,22 @@ Route::get('doc-recepcionados',[
     'uses'=>'DocumentoController@mostrarDocRecepcionados'
 ]);
 
+Route::get('nuevo-documento',[
+    'as'=>'nuevodocumento',
+    'uses'=>'DocumentoController@mostrarNuevoDocumento'
+]);
+
 Route::post('documento/grabar',[
     'as'=>'documento.grabar',
     'uses'=>'DocumentoController@grabar'
+]);
+
+Route::get('doc-por-derivar',[
+    'as'=>'documento.derivar',
+    'uses'=>'DocumentoController@mostrarDerivarDocumento'
+]);
+
+Route::post('documento/derivado',[
+    'as'=>'documento.derivado',
+    'uses'=>'DocumentoController@derivado'
 ]);

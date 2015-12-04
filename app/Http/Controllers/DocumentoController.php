@@ -4,11 +4,12 @@ namespace TramiteWeb\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use TramiteWeb\Entities\HistorialDocumento;
 use TramiteWeb\Entities\TipoDocumento;
 use TramiteWeb\Http\Requests;
 use TramiteWeb\Http\Controllers\Controller;
 use TramiteWeb\Entities\Documento;
-
+use TramiteWeb\Entities\Oficina;
 
 
 class DocumentoController extends Controller
@@ -44,7 +45,8 @@ class DocumentoController extends Controller
 
     public function mostrarDocPorRecepcionar()
     {
-        return view('DocPorRecepcionar');
+        $documentos=Documento::all();
+        return view('DocPorRecepcionar')->with(compact('documentos'));
     }
 
     public function mostrarDocRecepcionados()
@@ -56,6 +58,15 @@ class DocumentoController extends Controller
      * mtodo para grabar un documento, recibe como argumentos
      * todos los elementos del formulario
      * */
+
+    public function mostrarDerivarDocumento()
+    {
+        $oficinas=Oficina::all();
+
+        return view('derivar.DerivarDoc')->with(compact('oficinas'));
+    }
+
+
     public function grabar(Request $request)
     {
         $datos=$request->all();
@@ -63,6 +74,34 @@ class DocumentoController extends Controller
         $datos['oficina_id']=1;
 
         Documento::create($datos);
+
+        return \Redirect::route('documento.derivar');
+    }
+
+
+
+    public function derivado(Request $request)
+    {
+        $datosderivados=$request->all();
+
+        /*$datosderivados['user_id']=1;
+        $datosderivados['documento_id']=1;
+        $datosderivados['oficina_origen_id']=1;
+        $datosderivados['fecha_emision']=1;
+        $datosderivados['oficina_destino_id']=1;
+        $datosderivados['estado']=1;
+        $datosderivados['eliminado']=1;
+        HistorialDocumento::create($datosderivados);*/
+
+
+        $historial = new HistorialDocumento();
+        $historial->user_id=1;
+        $historial->documento_id=1;
+        $historial->oficina_origen_id=1;
+        $historial->oficina_destino_id=1;
+        $historial->estado=1;
+        $historial->eliminado=1;
+        $historial->save();
 
         return \Redirect::route('nuevodocumento');
     }
