@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-    <form action="">
+    {!! Form::open(['route'=>'buscarDocArchivados','method'=>'POST','role'=>'form']) !!}
         <div CLASS="form-group">
             <div>
                 <i class="fa fa-search"></i>
@@ -26,6 +26,18 @@
         <div>
             {!! Form::submit('Buscar') !!}
         </div>
-    </form>
+
+         <table class="table table-hover table-striped table-bordered">
+                <thead>
+                <th>Nro</th>
+                <th>Tipo</th>
+                <th>Nro Doc</th>
+                <th>Enviado Por</th>
+                <th>Asunto</th>
+                <th>Anexos</th>
+                <th>Accion</th>
+        </table>
+        </br>
+        </form>
 
 @endsection

@@ -29,6 +29,26 @@ class DocumentoController extends Controller
         dd($busqueda);
 
     }
+
+    public function buscarDocArchivados(Request $request)
+    {
+        $datos=$request->all();
+        $criterio=$datos['nombre'];
+        $busqueda=Documento::where('asunto','like','%' . $criterio . '%')->get();
+        dd($busqueda);
+
+    }
+
+    public function buscarDocRecepcionado(Request $request)
+    {
+        $datos=$request->all();
+        $criterio=$datos['nombre'];
+        $busqueda=Documento::where('asunto','like','%' . $criterio . '%')->get();
+        dd($busqueda);
+
+    }
+
+
     public function mostrarNuevoDocumento()
     {
 
@@ -43,6 +63,7 @@ class DocumentoController extends Controller
         $tipodocumento=$misproveidos->all()->lists('descripcion','id');
         return view('MisProveidos')->with(compact('tipodocumento'));
     }
+
 
     public function mostrarMisDocumentosArchivados()
     {

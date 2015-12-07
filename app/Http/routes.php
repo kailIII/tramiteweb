@@ -27,6 +27,29 @@ Route::post('mis-proveidos',[
     'uses'=>'DocumentoController@buscarProveido'
 ]);
 
+Route::get('mis-proveidos',[
+    'as'=>'misproveidos',
+    'uses'=>'DocumentoController@mostrarMisProveidos'
+]);
+Route::post('mis-doc-archivados',[
+    'as'=>'buscarDocArchivados',
+    'uses'=>'DocumentoController@buscarDocArchivados'
+]);
+
+Route::get('doc-recepcionado',[
+    'as'=>'DocRecepcionado',
+    'uses'=>'DocumentoController@buscarDocRecepcionado'
+]);
+Route::post('doc-recepcionado',[
+    'as'=>'buscarDocRecepcionado',
+    'uses'=>'DocumentoController@buscarDocRecepcionado'
+]);
+
+
+
+
+
+
 
 
 
