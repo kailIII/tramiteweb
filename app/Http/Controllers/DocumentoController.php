@@ -88,11 +88,11 @@ class DocumentoController extends Controller
      * todos los elementos del formulario
      * */
 
-    public function mostrarDerivarDocumento()
+    public function mostrarDerivarDocumento($i)
     {
+        $documento=Documento::find($i);
         $oficinas=Oficina::all();
-
-        return view('derivar.DerivarDoc')->with(compact('oficinas'));
+        return view('derivar.DerivarDoc')->with(compact('oficinas','documento'));
     }
 
 
@@ -102,9 +102,9 @@ class DocumentoController extends Controller
 
         $datos['oficina_id']=1;
 
-        Documento::create($datos);
+        $documento=Documento::create($datos);
 
-        return \Redirect::route('documento.derivar');
+        return \Redirect::route('documento.derivar',$documento->id);
     }
 
 
@@ -112,7 +112,7 @@ class DocumentoController extends Controller
     public function derivado(Request $request)
     {
         $datosderivados=$request->all();
-
+        
         /*$datosderivados['user_id']=1;
         $datosderivados['documento_id']=1;
         $datosderivados['oficina_origen_id']=1;
@@ -122,15 +122,18 @@ class DocumentoController extends Controller
         $datosderivados['eliminado']=1;
         HistorialDocumento::create($datosderivados);*/
 
-
-        $historial = new HistorialDocumento();
-        $historial->user_id=1;
-        $historial->documento_id=1;
-        $historial->oficina_origen_id=1;
-        $historial->oficina_destino_id=1;
-        $historial->estado=1;
-        $historial->eliminado=1;
-        $historial->save();
+        $oficinas=$datosderivados['oficina_id'];
+        foreach($oficinas as $oficina)
+        {
+            $historial = new HistorialDocumento();
+            $historial->user_id=1;
+            $historial->documento_id=$datosderivados['documento_id'];
+            $historial->oficina_origen_id=1;
+            $historial->oficina_destino_id=$oficina;
+            $historial->estado=1;
+            $historial->eliminado=1;
+            $historial->save();
+        }
 
         return \Redirect::route('nuevodocumento');
     }

@@ -86,7 +86,7 @@ Route::post('documento/grabar',[
     'uses'=>'DocumentoController@grabar'
 ]);
 
-Route::get('doc-por-derivar',[
+Route::get('{i}/doc-por-derivar',[
     'as'=>'documento.derivar',
     'uses'=>'DocumentoController@mostrarDerivarDocumento'
 ]);
