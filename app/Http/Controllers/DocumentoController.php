@@ -100,14 +100,12 @@ class DocumentoController extends Controller
     {
         $datos=$request->all();
 
-        $datos['oficina_id']=1;
-
+        $datos['oficina_id']=5 ;
+        $datos['remitente_id']=3;
         $documento=Documento::create($datos);
 
         return \Redirect::route('documento.derivar',$documento->id);
     }
-
-
 
     public function derivado(Request $request)
     {
