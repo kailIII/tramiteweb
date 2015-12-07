@@ -22,6 +22,12 @@ Route::get('mis-proveidos',[
     'uses'=>'DocumentoController@mostrarMisProveidos'
 ]);
 
+Route::post('mis-proveidos',[
+    'as'=>'buscarProveidos',
+    'uses'=>'DocumentoController@buscarProveido'
+]);
+
+
 
 
 Route::get('mis-documentos',[

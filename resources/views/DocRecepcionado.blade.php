@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-    <form action="">
+    {!! Form::open(['route'=>'buscarproveido','method'=>'POST','role'=>'form']) !!}
         <div CLASS="form-group">
             {!! Form::label('Busqueda') !!}
             {!! Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Iniciar busqueda'])!!}
@@ -9,6 +9,7 @@
           <div ClASS="form-group">
                 {!! Form::Button ('Buscar') !!}
             </div>
+        <tr>
             <table class="table table-hover table-striped table-bordered">
                 <thead>
                 <td>Nro</td>
@@ -28,14 +29,6 @@
                     <td></td>
                     <td>Eliminar | Ver</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Memorandum</td>
-                    <td>5555</td>
-                    <td>Contabildad</td>
-                    <td>recomendaciones</td>
-                    <td>Cd</td>
-                    <td>Eliminar | Ver</td>
                 </tr>
             </table>
     </form>

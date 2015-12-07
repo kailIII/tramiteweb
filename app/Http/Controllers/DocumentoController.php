@@ -21,6 +21,14 @@ class DocumentoController extends Controller
         return view('misdocumentos.MisDocumentos')->with(compact('tipodocumento'));
     }
 
+    public function buscarProveido(Request $request)
+    {
+        $datos=$request->all();
+        $criterio=$datos['nombre'];
+        $busqueda=Documento::where('asunto','like','%' . $criterio . '%')->get();
+        dd($busqueda);
+
+    }
     public function mostrarNuevoDocumento()
     {
 

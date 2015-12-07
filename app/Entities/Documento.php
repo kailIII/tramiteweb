@@ -17,7 +17,6 @@ class Documento extends Model
    {
       return $this->belongsTo('TramiteWeb\Entities\Oficina');
    }
-
 }
 
 
