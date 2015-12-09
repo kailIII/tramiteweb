@@ -39,7 +39,8 @@
                 <td></td>
                 <td>Eliminar | Ver</td>
             </tr>
-        </tr>
+
             </table>
+        </tr>
     </form>
 @endsection

@@ -8,7 +8,7 @@ class Documento extends Model
 {
    protected $fillable=['oficina_id','remitente_id','tipo_documento_id','numero','asunto', 'anexos'];
 
-   public function TipoDocumento()
+   public function tipoDocumento()
    {
       return $this->belongsTo('TramiteWeb\Entities\TipoDocumento');
    }

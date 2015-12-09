@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-    <form action="">
+    {!! Form::open(['route'=>'documento.recepcionar','method'=>'POST','role'=>'form']) !!}
 
         <table class="table table-bordered table-hover table-striped">
             <thead>
@@ -15,17 +15,17 @@
             <th>Accion</th>
             </thead>
             </tr>
-            @if($documentos)
+            @if($historicosDocumento)
 
-                @foreach($documentos as $documento)
+                @foreach($historicosDocumento as $historicoDocumento)
                     <tr>
-                    <td>{!! $documento->id !!}</td>
-                    <td>{!! $documento->TipoDocumento->descripcion !!}</td>
-                    <td>{!! $documento->numero !!}</td>
-                    <td>{!! $documento->Oficina->nombre  !!}</td>
-                    <td>{!! $documento->asunto !!}</td>
-                    <td>{!! $documento->anexos !!}</td>
-                    <td> {!! Form::submit('Recepcionar') !!}</td>
+                    <td>{!! $historicoDocumento->id !!}</td>
+                    <td>{!! $historicoDocumento->documento->tipoDocumento->descripcion !!}</td>
+                    <td>{!! $historicoDocumento->documento->numero !!}</td>
+                    <td>{!! $historicoDocumento->documento->oficina->nombre !!}</td>
+                    <td>{!! $historicoDocumento->documento->asunto !!}</td>
+                    <td>{!! $historicoDocumento->documento->anexo !!}</td>
+                    <td>{!! Form::submit('Proveido') !!} </td>
                     </tr>
                 @endforeach
 

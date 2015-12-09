@@ -18,4 +18,9 @@ class HistorialDocumento extends Model
                         'eliminado'];
 
 
+    public function Documento()
+    {
+        return $this->belongsTo('TramiteWeb\Entities\Documento');
+    }
+
 }

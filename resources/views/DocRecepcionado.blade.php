@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-    {!! Form::open(['route'=>'buscarDocRecepcionado','method'=>'POST','role'=>'form']) !!}
+    <form>
         <div CLASS="form-group">
             {!! Form::label('Busqueda') !!}
             {!! Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Iniciar busqueda'])!!}
@@ -21,6 +21,27 @@
                 <th>Accion</th>
                 </thead>
                 </tr>
+
+                @if($documentos)
+
+                    @foreach($documentos as $documento)
+                        <tr>
+                           <!-- <td>{!! $documento->id !!}</td>
+                            <td>{!! $documento->TipoDocumento->descripcion !!}</td>
+                            <td>{!! $documento->numero !!}</td>
+                            <td>{!! $documento->Oficina->nombre  !!}</td>
+                            <td>{!! $documento->asunto !!}</td>
+                            <td>{!! $documento->anexos !!}</td>
+                            <td> {!! Form::submit('Recepcionar') !!}</td> -->
+                        </tr>
+                    @endforeach
+
+                @else
+                    <tr>
+                        <td>No Se Encontraron Registros</td>
+                    </tr>
+                @endif
+
             </table>
     </form>
 @endsection

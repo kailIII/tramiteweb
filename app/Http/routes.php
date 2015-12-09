@@ -49,10 +49,6 @@ Route::post('doc-recepcionado',[
 
 
 
-
-
-
-
 Route::get('mis-documentos',[
     'as'=>'misdocumentos',
     'uses'=>'DocumentoController@mostrarMisDocumentos'
@@ -86,6 +82,11 @@ Route::post('documento/grabar',[
     'uses'=>'DocumentoController@grabar'
 ]);
 
+Route::post('documento/recepcionar',[
+    'as'=>'documento.recepcionar',
+    'uses'=>'DocumentoController@recepcionar'
+]);
+
 Route::get('{i}/doc-por-derivar',[
     'as'=>'documento.derivar',
     'uses'=>'DocumentoController@mostrarDerivarDocumento'
@@ -95,3 +96,4 @@ Route::post('documento/derivado',[
     'as'=>'documento.derivado',
     'uses'=>'DocumentoController@derivado'
 ]);
+
