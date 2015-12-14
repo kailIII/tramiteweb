@@ -74,8 +74,8 @@ class DocumentoController extends Controller
 
     public function mostrarDocPorRecepcionar()
     {
-        $oficina_id=1;
-        $historicosDocumento=historialDocumento::where('oficina_destino_id',$oficina_id)->get();
+        $oficina_id=5;
+        $historicosDocumento=historialDocumento::where('oficina_destino_id',$oficina_id)->where('estado','=','Sin recibir')->get();
         //dd($documentos);
         return view('DocPorRecepcionar')->with(compact('historicosDocumento'));
     }
@@ -83,6 +83,7 @@ class DocumentoController extends Controller
     public function mostrarDocRecepcionados()
     {
         return view('DocRecepcionado');
+
     }
 
     /*
@@ -138,26 +139,11 @@ class DocumentoController extends Controller
         return \Redirect::route('nuevodocumento');
     }
 
-    public function recepcionado(Request $request)
+    public function recepcionar($id)
     {
-        $datosrecepcionados=$request->all();
-        $oficinas=$datosrecepcionados['oficina_id'];
-        foreach($oficinas as $oficina)
-        {
-            $historial = new HistorialDocumento();
-            $historial->user_id=1;
-            $historial->documento_id=$datosrecepcionados['documento_id'];
-            $historial->oficina_origen_id=1;
-            $historial->oficina_destino_id=$oficina;
-            $historial->estado=1;
-            $historial->eliminado=1;
-            $historial->save();
-        }
-
-        return \Redirect::route('nuevodocumento');
+        $historico=HistorialDocumento::find($id);
+        $historico->estado='Recibido';
+        $historico->save();
+        return "jejeje";
     }
-
-
 }
-
-

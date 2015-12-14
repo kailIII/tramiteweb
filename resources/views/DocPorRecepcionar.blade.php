@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-    {!! Form::open(['route'=>'documento.recepcionar','method'=>'POST','role'=>'form']) !!}
+
 
         <table class="table table-bordered table-hover table-striped">
             <thead>
@@ -25,7 +25,7 @@
                     <td>{!! $historicoDocumento->documento->oficina->nombre !!}</td>
                     <td>{!! $historicoDocumento->documento->asunto !!}</td>
                     <td>{!! $historicoDocumento->documento->anexo !!}</td>
-                    <td>{!! Form::submit('Proveido') !!} </td>
+                    <td> <a href={!! route('documento.recepcionar',$historicoDocumento->id) !!} class="btn btn-success">Recepcionar</a></td>
                     </tr>
                 @endforeach
 
@@ -38,5 +38,5 @@
             <br>
         </table>
 
-    </form>
+
 @endsection

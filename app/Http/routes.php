@@ -82,7 +82,7 @@ Route::post('documento/grabar',[
     'uses'=>'DocumentoController@grabar'
 ]);
 
-Route::post('documento/recepcionar',[
+Route::get('documento/recepcionar/{i}',[
     'as'=>'documento.recepcionar',
     'uses'=>'DocumentoController@recepcionar'
 ]);
@@ -96,4 +96,5 @@ Route::post('documento/derivado',[
     'as'=>'documento.derivado',
     'uses'=>'DocumentoController@derivado'
 ]);
+
 
